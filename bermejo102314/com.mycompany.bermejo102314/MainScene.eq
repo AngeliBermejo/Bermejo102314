@@ -12,10 +12,9 @@ public class MainScene : SEScene
 	public static int x;
 	public static int y;
 	int i;
-	int p_x;
-	int p_y;
 	
 	public void initialize(SEResourceCache rsc) {
+		
 		AudioClipManager.prepare("mysound");
 		base.initialize(rsc);
 		w = get_scene_width();
