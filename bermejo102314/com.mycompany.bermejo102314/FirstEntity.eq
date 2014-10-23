@@ -7,6 +7,7 @@
 public class FirstEntity : SEEntity
 {
 	SESprite monster;
+	SESprite text;
 	int w;
 	int h;
 	int m_x;
@@ -31,6 +32,11 @@ public class FirstEntity : SEEntity
 		var m_x = monster.get_x();
 		var m_y = monster.get_y();
 		monster.move(m_x+(p_x-m_x)/Math.random(100,500),m_y+(p_y-m_y)/Math.random(100,500));
+
+		 if((mx/p_x)==1 && (my/p_y)==1){
+            text.set_text("GAME OVER!");
+            text.move(0.35*w, 0.45*h);
+        }
 	}
 	
 	public void cleanup() {

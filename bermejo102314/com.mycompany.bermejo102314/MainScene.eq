@@ -16,6 +16,7 @@ public class MainScene : SEScene
 	int p_y;
 	
 	public void initialize(SEResourceCache rsc) {
+		AudioClipManager.prepare("mysound");
 		base.initialize(rsc);
 		w = get_scene_width();
 		h = get_scene_height();
@@ -28,7 +29,7 @@ public class MainScene : SEScene
 		for(i=0; i<Math.random(3,20); i++) {
 			add_entity(new FirstEntity());
 		}
-
+	
 		AudioClipManager.play("mysound");
 		
 	}
@@ -43,13 +44,6 @@ public class MainScene : SEScene
 		y = pi.get_y();
 		
 	}
-
-	public void on_pointer_press(SEPointerInfo pi) {
-            base.on_pointer_press(pi);
-            switch_scene(new GameOver());
-    
-    }
-
 
 	public void cleanup() {
 		base.cleanup();
